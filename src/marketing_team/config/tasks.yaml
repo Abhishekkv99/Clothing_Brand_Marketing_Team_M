@@ -1,0 +1,33 @@
+market_research_task:
+  description: >
+    Conduct a comprehensive market research for {topic}.
+    Focus on current fashion trends, competitor pricing, and target demographics (Gen Z and Millennials).
+    Identify key themes and potential angles for the campaign.
+  expected_output: >
+    A detailed market research report containing trend analysis, competitor insights, 
+    and detailed personas of the target audience.
+  agent: market_researcher
+
+content_strategy_task:
+  description: >
+    Using the market research report, develop a comprehensive content strategy for {topic}.
+    This should include blog post ideas, social media themes, and ad copy drafts.
+    Ensure the tone is energetic and inclusive.
+  expected_output: >
+    A content calendar and strategy document with at least 5 distinct content ideas 
+    and sample copy for Instagram and TikTok.
+  agent: content_creator
+  context: [market_research_task]
+
+review_and_approval_task:
+  description: >
+    Review the market research and content strategy for {topic}.
+    Ensure everything aligns with the brand's core values of sustainability and style.
+    Provide feedback or approval for the final campaign plan.
+    Synthesize the information into a final executive summary.
+  expected_output: >
+    A final approved marketing campaign plan with an executive summary, 
+    including any necessary revisions to the strategy.
+  agent: marketing_manager
+  context: [market_research_task, content_strategy_task]
+
